@@ -12,6 +12,30 @@
 		02CEF604198530A900A9B309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF602198530A900A9B309 /* Main.storyboard */; };
 		02CEF606198530A900A9B309 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF605198530A900A9B309 /* Images.xcassets */; };
 		02CEF612198530A900A9B309 /* BillsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF611198530A900A9B309 /* BillsManagerTests.swift */; };
+		02CEF62E198531DD00A9B309 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF61C198531DD00A9B309 /* AddBillViewController.swift */; };
+		02CEF62F198531DD00A9B309 /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF61D198531DD00A9B309 /* AddUserViewController.swift */; };
+		02CEF630198531DE00A9B309 /* BillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF61E198531DD00A9B309 /* BillsViewController.swift */; };
+		02CEF631198531DE00A9B309 /* SearchOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF61F198531DD00A9B309 /* SearchOptionsViewController.swift */; };
+		02CEF632198531DE00A9B309 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF620198531DD00A9B309 /* SearchResultsViewController.swift */; };
+		02CEF633198531DE00A9B309 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF621198531DD00A9B309 /* SearchViewController.swift */; };
+		02CEF634198531DE00A9B309 /* StatisticsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF622198531DD00A9B309 /* StatisticsDetailsViewController.swift */; };
+		02CEF635198531DE00A9B309 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF623198531DD00A9B309 /* StatisticsViewController.swift */; };
+		02CEF636198531DE00A9B309 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF624198531DD00A9B309 /* UsersTableViewController.swift */; };
+		02CEF637198531DE00A9B309 /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF625198531DD00A9B309 /* UtilityMethods.swift */; };
+		02CEF638198531DE00A9B309 /* CustomCellSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEF627198531DD00A9B309 /* CustomCellSearchResults.swift */; };
+		02CEF646198537BB00A9B309 /* Icon_AddUser.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF63F198537BB00A9B309 /* Icon_AddUser.png */; };
+		02CEF647198537BB00A9B309 /* Icon_Bill.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF640198537BB00A9B309 /* Icon_Bill.png */; };
+		02CEF648198537BB00A9B309 /* Icon_Search.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF641198537BB00A9B309 /* Icon_Search.png */; };
+		02CEF649198537BB00A9B309 /* Icon_Stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF642198537BB00A9B309 /* Icon_Stats.png */; };
+		02CEF64A198537BB00A9B309 /* IconElectricity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF643198537BB00A9B309 /* IconElectricity.jpg */; };
+		02CEF64B198537BB00A9B309 /* IconGas.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF644198537BB00A9B309 /* IconGas.jpeg */; };
+		02CEF64C198537BB00A9B309 /* IconWater.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF645198537BB00A9B309 /* IconWater.png */; };
+		02CEF64E19853C8200A9B309 /* BGMain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF64D19853C8200A9B309 /* BGMain.jpg */; };
+		02CEF650198540A800A9B309 /* BGAddUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF64F198540A800A9B309 /* BGAddUser.jpg */; };
+		02CEF652198543A000A9B309 /* BGAddBills.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF651198543A000A9B309 /* BGAddBills.jpg */; };
+		02CEF6541985450700A9B309 /* BGStats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF6531985450700A9B309 /* BGStats.jpg */; };
+		02CEF6561985461600A9B309 /* BGSearch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF6551985461600A9B309 /* BGSearch.jpg */; };
+		02CEF6581985478400A9B309 /* BGNumbers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02CEF6571985478400A9B309 /* BGNumbers.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +58,30 @@
 		02CEF60B198530A900A9B309 /* BillsManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillsManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CEF610198530A900A9B309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02CEF611198530A900A9B309 /* BillsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsManagerTests.swift; sourceTree = "<group>"; };
+		02CEF61C198531DD00A9B309 /* AddBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
+		02CEF61D198531DD00A9B309 /* AddUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		02CEF61E198531DD00A9B309 /* BillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillsViewController.swift; sourceTree = "<group>"; };
+		02CEF61F198531DD00A9B309 /* SearchOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOptionsViewController.swift; sourceTree = "<group>"; };
+		02CEF620198531DD00A9B309 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		02CEF621198531DD00A9B309 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		02CEF622198531DD00A9B309 /* StatisticsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsDetailsViewController.swift; sourceTree = "<group>"; };
+		02CEF623198531DD00A9B309 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		02CEF624198531DD00A9B309 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		02CEF625198531DD00A9B309 /* UtilityMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
+		02CEF627198531DD00A9B309 /* CustomCellSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellSearchResults.swift; sourceTree = "<group>"; };
+		02CEF63F198537BB00A9B309 /* Icon_AddUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_AddUser.png; sourceTree = "<group>"; };
+		02CEF640198537BB00A9B309 /* Icon_Bill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Bill.png; sourceTree = "<group>"; };
+		02CEF641198537BB00A9B309 /* Icon_Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Search.png; sourceTree = "<group>"; };
+		02CEF642198537BB00A9B309 /* Icon_Stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Stats.png; sourceTree = "<group>"; };
+		02CEF643198537BB00A9B309 /* IconElectricity.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IconElectricity.jpg; sourceTree = "<group>"; };
+		02CEF644198537BB00A9B309 /* IconGas.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IconGas.jpeg; sourceTree = "<group>"; };
+		02CEF645198537BB00A9B309 /* IconWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconWater.png; sourceTree = "<group>"; };
+		02CEF64D19853C8200A9B309 /* BGMain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGMain.jpg; sourceTree = "<group>"; };
+		02CEF64F198540A800A9B309 /* BGAddUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGAddUser.jpg; sourceTree = "<group>"; };
+		02CEF651198543A000A9B309 /* BGAddBills.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGAddBills.jpg; sourceTree = "<group>"; };
+		02CEF6531985450700A9B309 /* BGStats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGStats.jpg; sourceTree = "<group>"; };
+		02CEF6551985461600A9B309 /* BGSearch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGSearch.jpg; sourceTree = "<group>"; };
+		02CEF6571985478400A9B309 /* BGNumbers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BGNumbers.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +105,9 @@
 		02CEF5F0198530A900A9B309 = {
 			isa = PBXGroup;
 			children = (
+				02CEF63E198537BB00A9B309 /* Graphics */,
+				02CEF61B198531DD00A9B309 /* Classes */,
+				02CEF626198531DD00A9B309 /* CustomViews */,
 				02CEF5FB198530A900A9B309 /* BillsManager */,
 				02CEF60E198530A900A9B309 /* BillsManagerTests */,
 				02CEF5FA198530A900A9B309 /* Products */,
@@ -107,6 +158,54 @@
 				02CEF610198530A900A9B309 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02CEF61B198531DD00A9B309 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				02CEF61C198531DD00A9B309 /* AddBillViewController.swift */,
+				02CEF61D198531DD00A9B309 /* AddUserViewController.swift */,
+				02CEF61E198531DD00A9B309 /* BillsViewController.swift */,
+				02CEF61F198531DD00A9B309 /* SearchOptionsViewController.swift */,
+				02CEF620198531DD00A9B309 /* SearchResultsViewController.swift */,
+				02CEF621198531DD00A9B309 /* SearchViewController.swift */,
+				02CEF622198531DD00A9B309 /* StatisticsDetailsViewController.swift */,
+				02CEF623198531DD00A9B309 /* StatisticsViewController.swift */,
+				02CEF624198531DD00A9B309 /* UsersTableViewController.swift */,
+				02CEF625198531DD00A9B309 /* UtilityMethods.swift */,
+			);
+			name = Classes;
+			path = BillsManager/Classes;
+			sourceTree = "<group>";
+		};
+		02CEF626198531DD00A9B309 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				02CEF627198531DD00A9B309 /* CustomCellSearchResults.swift */,
+			);
+			name = CustomViews;
+			path = BillsManager/CustomViews;
+			sourceTree = "<group>";
+		};
+		02CEF63E198537BB00A9B309 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				02CEF6571985478400A9B309 /* BGNumbers.jpg */,
+				02CEF6551985461600A9B309 /* BGSearch.jpg */,
+				02CEF651198543A000A9B309 /* BGAddBills.jpg */,
+				02CEF6531985450700A9B309 /* BGStats.jpg */,
+				02CEF64D19853C8200A9B309 /* BGMain.jpg */,
+				02CEF64F198540A800A9B309 /* BGAddUser.jpg */,
+				02CEF63F198537BB00A9B309 /* Icon_AddUser.png */,
+				02CEF640198537BB00A9B309 /* Icon_Bill.png */,
+				02CEF641198537BB00A9B309 /* Icon_Search.png */,
+				02CEF642198537BB00A9B309 /* Icon_Stats.png */,
+				02CEF643198537BB00A9B309 /* IconElectricity.jpg */,
+				02CEF644198537BB00A9B309 /* IconGas.jpeg */,
+				02CEF645198537BB00A9B309 /* IconWater.png */,
+			);
+			name = Graphics;
+			path = BillsManager/Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +288,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CEF650198540A800A9B309 /* BGAddUser.jpg in Resources */,
+				02CEF652198543A000A9B309 /* BGAddBills.jpg in Resources */,
+				02CEF6561985461600A9B309 /* BGSearch.jpg in Resources */,
+				02CEF649198537BB00A9B309 /* Icon_Stats.png in Resources */,
+				02CEF64A198537BB00A9B309 /* IconElectricity.jpg in Resources */,
+				02CEF646198537BB00A9B309 /* Icon_AddUser.png in Resources */,
 				02CEF604198530A900A9B309 /* Main.storyboard in Resources */,
+				02CEF6581985478400A9B309 /* BGNumbers.jpg in Resources */,
+				02CEF64B198537BB00A9B309 /* IconGas.jpeg in Resources */,
+				02CEF64E19853C8200A9B309 /* BGMain.jpg in Resources */,
+				02CEF6541985450700A9B309 /* BGStats.jpg in Resources */,
 				02CEF606198530A900A9B309 /* Images.xcassets in Resources */,
+				02CEF647198537BB00A9B309 /* Icon_Bill.png in Resources */,
+				02CEF64C198537BB00A9B309 /* IconWater.png in Resources */,
+				02CEF648198537BB00A9B309 /* Icon_Search.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +321,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CEF601198530A900A9B309 /* ViewController.swift in Sources */,
+				02CEF635198531DE00A9B309 /* StatisticsViewController.swift in Sources */,
+				02CEF62F198531DD00A9B309 /* AddUserViewController.swift in Sources */,
+				02CEF633198531DE00A9B309 /* SearchViewController.swift in Sources */,
+				02CEF630198531DE00A9B309 /* BillsViewController.swift in Sources */,
+				02CEF636198531DE00A9B309 /* UsersTableViewController.swift in Sources */,
+				02CEF631198531DE00A9B309 /* SearchOptionsViewController.swift in Sources */,
 				02CEF5FF198530A900A9B309 /* AppDelegate.swift in Sources */,
+				02CEF638198531DE00A9B309 /* CustomCellSearchResults.swift in Sources */,
+				02CEF632198531DE00A9B309 /* SearchResultsViewController.swift in Sources */,
+				02CEF62E198531DD00A9B309 /* AddBillViewController.swift in Sources */,
+				02CEF634198531DE00A9B309 /* StatisticsDetailsViewController.swift in Sources */,
+				02CEF637198531DE00A9B309 /* UtilityMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
