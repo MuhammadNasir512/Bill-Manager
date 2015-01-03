@@ -10,8 +10,8 @@ import UIKit
 
 class AddUserViewController: UIViewController, UITextFieldDelegate
 {
-    @IBOutlet var textFieldUserName:UITextField = UITextField()
-    @IBOutlet var labelMessage:UILabel = UILabel()
+    @IBOutlet var textFieldUserName:UITextField! = UITextField()
+    @IBOutlet var labelMessage:UILabel! = UILabel()
     
     override func didReceiveMemoryWarning()
     {

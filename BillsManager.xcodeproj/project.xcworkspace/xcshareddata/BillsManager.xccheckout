@@ -10,29 +10,29 @@
 	<string>BillsManager</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>39B95CC9-41AB-4DA2-9D4B-D9485A878A0E</key>
+		<key>435A7DE4DAF56E4C92A47802B87354D7EF1C9DF2</key>
 		<string>https://github.com/MuhammadNasir512/Bill-Manager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BillsManager.xcodeproj/project.xcworkspace</string>
+	<string>BillsManager.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>39B95CC9-41AB-4DA2-9D4B-D9485A878A0E</key>
+		<key>435A7DE4DAF56E4C92A47802B87354D7EF1C9DF2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MuhammadNasir512/Bill-Manager.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>39B95CC9-41AB-4DA2-9D4B-D9485A878A0E</string>
+	<string>435A7DE4DAF56E4C92A47802B87354D7EF1C9DF2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>39B95CC9-41AB-4DA2-9D4B-D9485A878A0E</string>
+			<string>435A7DE4DAF56E4C92A47802B87354D7EF1C9DF2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BillsManager</string>
 		</dict>

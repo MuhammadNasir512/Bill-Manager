@@ -14,9 +14,9 @@ class UtilityMethods
     {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var mutableArrayUsers:NSMutableArray = NSMutableArray()
-        if userDefaults.objectForKey("MutableArrayUsersData")
+        if (userDefaults.objectForKey("MutableArrayUsersData") != nil)
         {
-            mutableArrayUsers = userDefaults.objectForKey("MutableArrayUsersData") as NSMutableArray
+            mutableArrayUsers = userDefaults.objectForKey("MutableArrayUsersData")?.mutableCopy() as NSMutableArray
         }
         return mutableArrayUsers;
     }
@@ -31,9 +31,9 @@ class UtilityMethods
     {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var mutableArrayUsers:NSMutableArray = NSMutableArray()
-        if userDefaults.objectForKey("MutableArrayBillsData")
+        if (userDefaults.objectForKey("MutableArrayBillsData") != nil)
         {
-            mutableArrayUsers = userDefaults.objectForKey("MutableArrayBillsData") as NSMutableArray
+            mutableArrayUsers = userDefaults.objectForKey("MutableArrayBillsData")?.mutableCopy() as NSMutableArray
         }
         return mutableArrayUsers;
     }

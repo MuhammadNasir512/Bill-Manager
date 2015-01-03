@@ -18,9 +18,9 @@ class StatisticsViewController: UIViewController, UsersTableViewControllerDelega
     {
         super.viewDidLoad()
     }
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        if (segue?.identifier == "SegueStatisticsVCToUsersTableVC")
+        if (segue.identifier == "SegueStatisticsVCToUsersTableVC")
         {
             let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
             userTableVC.delegate = self
@@ -31,7 +31,7 @@ class StatisticsViewController: UIViewController, UsersTableViewControllerDelega
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let searchOptionsVC:StatisticsDetailsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDStatisticsVC") as StatisticsDetailsViewController
         searchOptionsVC.stringUserName = stringSelectedItem
-        self.navigationController.pushViewController(searchOptionsVC, animated: true)
+        self.navigationController?.pushViewController(searchOptionsVC, animated: true)
     }
 
 }

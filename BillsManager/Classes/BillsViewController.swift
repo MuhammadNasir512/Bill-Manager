@@ -23,9 +23,9 @@ class BillsViewController: UIViewController, UsersTableViewControllerDelegate
         super.viewDidLoad()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        if (segue?.identifier == "SegueBillsVCToUsersTableVC")
+        if (segue.identifier == "SegueBillsVCToUsersTableVC")
         {
             let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
             userTableVC.delegate = self
@@ -36,6 +36,6 @@ class BillsViewController: UIViewController, UsersTableViewControllerDelegate
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let addBillVC:AddBillViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDAddBillVC") as AddBillViewController
         addBillVC.stringUserName = stringSelectedItem
-        self.navigationController.pushViewController(addBillVC, animated: true)
+        self.navigationController!.pushViewController(addBillVC, animated: true)
     }
 }

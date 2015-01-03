@@ -10,19 +10,19 @@ import UIKit
 
 class StatisticsDetailsViewController: UIViewController
 {
-    @IBOutlet var labelUserName:UILabel = UILabel()
-    @IBOutlet var labelTotalAmountAllBills:UILabel = UILabel()
-    @IBOutlet var labelTotalAmountGas:UILabel = UILabel()
-    @IBOutlet var labelTotalAmountElectricity:UILabel = UILabel()
-    @IBOutlet var labelTotalAmountWater:UILabel = UILabel()
-    @IBOutlet var labelAverageAmountAllBills:UILabel = UILabel()
-    @IBOutlet var labelAverageAmountGas:UILabel = UILabel()
-    @IBOutlet var labelAverageAmountElectricity:UILabel = UILabel()
-    @IBOutlet var labelAverageAmountWater:UILabel = UILabel()
-    @IBOutlet var labelDailyAverageAllBills:UILabel = UILabel()
-    @IBOutlet var labelDailyAverageGas:UILabel = UILabel()
-    @IBOutlet var labelDailyAverageElectricity:UILabel = UILabel()
-    @IBOutlet var labelDailyAverageWater:UILabel = UILabel()
+    @IBOutlet var labelUserName:UILabel? = UILabel()
+    @IBOutlet var labelTotalAmountAllBills:UILabel? = UILabel()
+    @IBOutlet var labelTotalAmountGas:UILabel? = UILabel()
+    @IBOutlet var labelTotalAmountElectricity:UILabel? = UILabel()
+    @IBOutlet var labelTotalAmountWater:UILabel? = UILabel()
+    @IBOutlet var labelAverageAmountAllBills:UILabel? = UILabel()
+    @IBOutlet var labelAverageAmountGas:UILabel? = UILabel()
+    @IBOutlet var labelAverageAmountElectricity:UILabel? = UILabel()
+    @IBOutlet var labelAverageAmountWater:UILabel? = UILabel()
+    @IBOutlet var labelDailyAverageAllBills:UILabel? = UILabel()
+    @IBOutlet var labelDailyAverageGas:UILabel? = UILabel()
+    @IBOutlet var labelDailyAverageElectricity:UILabel? = UILabel()
+    @IBOutlet var labelDailyAverageWater:UILabel? = UILabel()
 
     var stringUserName:NSString = NSString()
     
@@ -38,7 +38,7 @@ class StatisticsDetailsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName.text = stringUserName
+        labelUserName?.text = stringUserName
         self.doStatistics()
     }
     func doStatistics()
@@ -65,7 +65,7 @@ class StatisticsDetailsViewController: UIViewController
                 dateFirstBill = mdOneBill.objectForKey("dateBillDate") as NSDate
             }
             
-            var floatBillAmount:Float = mdOneBill.objectForKey("stringBillAmount").floatValue
+            var floatBillAmount:Float! = mdOneBill.objectForKey("stringBillAmount")?.floatValue!
             totalBill += floatBillAmount
             
             var stringBillType:NSString = mdOneBill.objectForKey("stringBillType") as NSString
@@ -84,10 +84,10 @@ class StatisticsDetailsViewController: UIViewController
                 totalWater += floatBillAmount
                 waterCount++
             }
-            labelTotalAmountAllBills.text = NSString(format: "£%.2f", totalBill)
-            labelTotalAmountElectricity.text = NSString(format: "£%.2f", totalElec)
-            labelTotalAmountWater.text = NSString(format: "£%.2f", totalWater)
-            labelTotalAmountGas.text = NSString(format: "£%.2f", totalGas)
+            labelTotalAmountAllBills!.text = NSString(format: "£%.2f", totalBill)
+            labelTotalAmountElectricity!.text = NSString(format: "£%.2f", totalElec)
+            labelTotalAmountWater!.text = NSString(format: "£%.2f", totalWater)
+            labelTotalAmountGas!.text = NSString(format: "£%.2f", totalGas)
             
             var allAvg:Float = totalBill / Float(maAllBillsForThisUser.count)
             var gasAvg:Float = totalGas / Float(gasCount)
@@ -98,10 +98,10 @@ class StatisticsDetailsViewController: UIViewController
             if (elecAvg.isNaN == true) { elecAvg = 0.0 }
             if (waterAvg.isNaN == true) { waterAvg = 0.0 }
 
-            labelAverageAmountAllBills.text = NSString(format: "£%.2f", allAvg)
-            labelAverageAmountElectricity.text = NSString(format: "£%.2f", elecAvg)
-            labelAverageAmountWater.text = NSString(format: "£%.2f", waterAvg)
-            labelAverageAmountGas.text = NSString(format: "£%.2f", gasAvg)
+            labelAverageAmountAllBills!.text = NSString(format: "£%.2f", allAvg)
+            labelAverageAmountElectricity!.text = NSString(format: "£%.2f", elecAvg)
+            labelAverageAmountWater!.text = NSString(format: "£%.2f", waterAvg)
+            labelAverageAmountGas!.text = NSString(format: "£%.2f", gasAvg)
             
             let dateToday:NSDate = NSDate()
             var days:Int = self.daysBetweenDate(dateFirstBill, toDateTime:dateToday)
@@ -112,10 +112,10 @@ class StatisticsDetailsViewController: UIViewController
             var elecDailyAvg:Float = totalElec / Float(days)
             var waterDailyAvg:Float = totalWater / Float(days)
 
-            labelDailyAverageAllBills.text = NSString(format: "£%.2f", allDailyAvg)
-            labelDailyAverageElectricity.text = NSString(format: "£%.2f", elecDailyAvg)
-            labelDailyAverageWater.text = NSString(format: "£%.2f", waterDailyAvg)
-            labelDailyAverageGas.text = NSString(format: "£%.2f", gasDailyAvg)
+            labelDailyAverageAllBills!.text = NSString(format: "£%.2f", allDailyAvg)
+            labelDailyAverageElectricity!.text = NSString(format: "£%.2f", elecDailyAvg)
+            labelDailyAverageWater!.text = NSString(format: "£%.2f", waterDailyAvg)
+            labelDailyAverageGas!.text = NSString(format: "£%.2f", gasDailyAvg)
         }
 
     }

@@ -10,9 +10,9 @@ import UIKit
 
 class SearchOptionsViewController: UIViewController
 {
-    @IBOutlet var labelUserName:UILabel = UILabel()
-    @IBOutlet var datePickerFromDate:UIDatePicker = UIDatePicker()
-    @IBOutlet var datePickerToDate:UIDatePicker = UIDatePicker()
+    @IBOutlet var labelUserName:UILabel? = UILabel()
+    @IBOutlet var datePickerFromDate:UIDatePicker? = UIDatePicker()
+    @IBOutlet var datePickerToDate:UIDatePicker? = UIDatePicker()
     
     var stringUserName:NSString = NSString()
     
@@ -28,7 +28,7 @@ class SearchOptionsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName.text = stringUserName
+        labelUserName?.text = stringUserName
     }
     
     // This method overridden to stop navigating to next view if input is invalid
@@ -38,8 +38,8 @@ class SearchOptionsViewController: UIViewController
         {
             return true
         }
-        let dateFrom:NSDate = datePickerFromDate.date;
-        let dateTo:NSDate = datePickerToDate.date
+        let dateFrom:NSDate = datePickerFromDate!.date;
+        let dateTo:NSDate = datePickerToDate!.date
         var stringMessage:NSString = ""
         
         if (dateFrom.compare(dateTo) == NSComparisonResult.OrderedSame)
@@ -66,15 +66,15 @@ class SearchOptionsViewController: UIViewController
         return true
     }
     // This method overridden to set properties of next view controller
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
         let searchResultsVC:SearchResultsViewController = segue.destinationViewController as SearchResultsViewController
         searchResultsVC.stringUserName = stringUserName
         
-        if (segue?.identifier == "SegueSearchWithDates")
+        if (segue.identifier == "SegueSearchWithDates")
         {
-            searchResultsVC.dateFromDate = datePickerFromDate.date
-            searchResultsVC.dateToDate = datePickerToDate.date
+            searchResultsVC.dateFromDate = datePickerFromDate!.date
+            searchResultsVC.dateToDate = datePickerToDate!.date
             searchResultsVC.stringSearchType = StringSearchTypeDatesResults
         }
         else

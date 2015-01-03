@@ -10,9 +10,9 @@ import UIKit
 
 class CustomCellSearchResults: UITableViewCell
 {
-    @IBOutlet var labelBillAmountValue:UILabel = UILabel()
-    @IBOutlet var labelBillDateValue:UILabel = UILabel()
-    @IBOutlet var labelBillTypeValue:UILabel = UILabel()
+    @IBOutlet var labelBillAmountValue:UILabel? = UILabel()
+    @IBOutlet var labelBillDateValue:UILabel? = UILabel()
+    @IBOutlet var labelBillTypeValue:UILabel? = UILabel()
 
     var stringBillAmount:NSString = NSString()
     var stringBillType:NSString = NSString()
@@ -20,8 +20,8 @@ class CustomCellSearchResults: UITableViewCell
     
     func setupCell()
     {
-        labelBillAmountValue.text = stringBillAmount
-        labelBillTypeValue.text = stringBillType
-        labelBillDateValue.text = stringBillDate
+        labelBillAmountValue?.text = stringBillAmount
+        labelBillTypeValue?.text = stringBillType
+        labelBillDateValue?.text = stringBillDate
     }
 }

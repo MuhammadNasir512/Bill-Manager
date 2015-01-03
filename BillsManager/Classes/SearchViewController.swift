@@ -18,9 +18,9 @@ class SearchViewController: UIViewController, UsersTableViewControllerDelegate
     {
         super.viewDidLoad()
     }
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        if (segue?.identifier == "SegueSearchVCToUsersTableVC")
+        if (segue.identifier == "SegueSearchVCToUsersTableVC")
         {
             let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
             userTableVC.delegate = self
@@ -31,6 +31,6 @@ class SearchViewController: UIViewController, UsersTableViewControllerDelegate
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let searchOptionsVC:SearchOptionsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDSearchOptionsVC") as SearchOptionsViewController
         searchOptionsVC.stringUserName = stringSelectedItem
-        self.navigationController.pushViewController(searchOptionsVC, animated: true)
+        self.navigationController?.pushViewController(searchOptionsVC, animated: true)
     }
 }

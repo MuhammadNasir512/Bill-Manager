@@ -11,11 +11,11 @@ import UIKit
 let StringSearchTypeAllResults:NSString = "ALL"
 let StringSearchTypeDatesResults:NSString = "DATES"
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class SearchResultsViewController: UIViewController, UITableViewDelegate
 {
     
-    @IBOutlet var labelUserName:UILabel = UILabel()
-    @IBOutlet var tableviewResults:UITableView = UITableView()
+    @IBOutlet var labelUserName:UILabel? = UILabel()
+    @IBOutlet var tableviewResults:UITableView? = UITableView()
 
     var stringUserName:NSString = NSString()
     var stringSearchType:NSString = NSString()
@@ -35,7 +35,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName.text = stringUserName
+        labelUserName?.text = stringUserName
         mutableArrayResults = UtilityMethods.getBillsFromUserDefaults(stringUserName)
         if (mutableArrayResults.count == 0)
         {
@@ -49,7 +49,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             mutableArrayResults.removeAllObjects()
             mutableArrayResults.addObjectsFromArray(maFilteredResults)
         }
-        tableviewResults.reloadData()
+        tableviewResults?.reloadData()
     }
     func filterSearchResults() -> NSMutableArray
     {
@@ -93,7 +93,7 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         var cell:CustomCellSearchResults = CustomCellSearchResults()
-        if tableView.dequeueReusableCellWithIdentifier("CellID")
+        if (tableView.dequeueReusableCellWithIdentifier("CellID") != nil)
         {
             cell = tableView.dequeueReusableCellWithIdentifier("CellID") as CustomCellSearchResults
         }

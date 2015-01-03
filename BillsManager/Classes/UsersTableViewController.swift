@@ -13,9 +13,9 @@ protocol UsersTableViewControllerDelegate
     func didSelectTableRowUsersTableVC(stringSelectedItem:NSString)
 }
 
-class UsersTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class UsersTableViewController: UIViewController, UITableViewDelegate
 {
-    @IBOutlet var tableviewUsers:UITableView = UITableView()
+    @IBOutlet var tableviewUsers:UITableView? = UITableView()
     var delegate:UsersTableViewControllerDelegate?
     var mutableArrayUser:NSMutableArray = NSMutableArray()
     
@@ -32,7 +32,7 @@ class UsersTableViewController: UIViewController, UITableViewDataSource, UITable
     func startLoadingView()
     {
         mutableArrayUser = UtilityMethods.getUsersFromUserDefaults()
-        tableviewUsers.reloadData()
+        tableviewUsers!.reloadData()
     }
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
     {
@@ -42,7 +42,7 @@ class UsersTableViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
     {
         var cell:UITableViewCell = UITableViewCell()
-        if tableView.dequeueReusableCellWithIdentifier("CellID")
+        if (tableView.dequeueReusableCellWithIdentifier("CellID") != nil)
         {
             cell = tableView.dequeueReusableCellWithIdentifier("CellID") as UITableViewCell
         }
@@ -50,7 +50,7 @@ class UsersTableViewController: UIViewController, UITableViewDataSource, UITable
         {
             cell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"CellID")
         }
-        cell.textLabel.text = mutableArrayUser.objectAtIndex(indexPath.row) as NSString
+        cell.textLabel?.text = mutableArrayUser.objectAtIndex(indexPath.row) as NSString
         return cell
     }
     
