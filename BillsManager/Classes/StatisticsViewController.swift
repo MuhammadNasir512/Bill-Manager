@@ -22,14 +22,14 @@ class StatisticsViewController: UIViewController, UsersTableViewControllerDelega
     {
         if (segue.identifier == "SegueStatisticsVCToUsersTableVC")
         {
-            let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
+            let userTableVC:UsersTableViewController = segue.destinationViewController as! UsersTableViewController
             userTableVC.delegate = self
         }
     }
     func didSelectTableRowUsersTableVC(stringSelectedItem: NSString)
     {
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let searchOptionsVC:StatisticsDetailsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDStatisticsVC") as StatisticsDetailsViewController
+        let searchOptionsVC:StatisticsDetailsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDStatisticsVC") as! StatisticsDetailsViewController
         searchOptionsVC.stringUserName = stringSelectedItem
         self.navigationController?.pushViewController(searchOptionsVC, animated: true)
     }

@@ -27,14 +27,14 @@ class BillsViewController: UIViewController, UsersTableViewControllerDelegate
     {
         if (segue.identifier == "SegueBillsVCToUsersTableVC")
         {
-            let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
+            let userTableVC:UsersTableViewController = segue.destinationViewController as! UsersTableViewController
             userTableVC.delegate = self
         }
     }
     func didSelectTableRowUsersTableVC(stringSelectedItem: NSString)
     {
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let addBillVC:AddBillViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDAddBillVC") as AddBillViewController
+        let addBillVC:AddBillViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDAddBillVC") as! AddBillViewController
         addBillVC.stringUserName = stringSelectedItem
         self.navigationController!.pushViewController(addBillVC, animated: true)
     }

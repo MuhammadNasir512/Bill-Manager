@@ -21,11 +21,11 @@ class AddUserViewController: UIViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
     }
-    func textFieldDidBeginEditing(textField: UITextField!)
+    func textFieldDidBeginEditing(textField: UITextField)
     {
         textFieldUserName.text = ""
         labelMessage.text = ""
-        var tapGestureRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGestureSelector:")
+        let tapGestureRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGestureSelector:")
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
     func tapGestureSelector(tapGestureRecognizer: UITapGestureRecognizer!)-> Void
@@ -37,15 +37,15 @@ class AddUserViewController: UIViewController, UITextFieldDelegate
     @IBAction func buttonAddUserActionSelector(button: UIButton!)
     {
         textFieldUserName.resignFirstResponder()
-        var stringUserName:NSString = textFieldUserName.text
+        var stringUserName:NSString = textFieldUserName.text!
         stringUserName = stringUserName.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
         if (stringUserName.length > 0)
         {
-            var maUsers:NSMutableArray = UtilityMethods.getUsersFromUserDefaults()
+            let maUsers:NSMutableArray = UtilityMethods.getUsersFromUserDefaults()
             maUsers.addObject(stringUserName)
             UtilityMethods.setUsersToUserDefaults(maUsers)
-            labelMessage.text = "User added to database.\nUser Name: " + stringUserName
+            labelMessage.text = "User added to database.\nUser Name: " + (stringUserName as String)
             textFieldUserName.text = ""
         }
         else

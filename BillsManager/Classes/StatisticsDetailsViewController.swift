@@ -38,12 +38,12 @@ class StatisticsDetailsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName?.text = stringUserName
+        labelUserName?.text = stringUserName as String
         self.doStatistics()
     }
     func doStatistics()
     {
-        var maAllBillsForThisUser:NSMutableArray = UtilityMethods.getBillsFromUserDefaults(stringUserName)
+        let maAllBillsForThisUser:NSMutableArray = UtilityMethods.getBillsFromUserDefaults(stringUserName)
         self.sortWRTDate(maAllBillsForThisUser)
         
         var totalBill:Float = 0.0
@@ -57,18 +57,18 @@ class StatisticsDetailsViewController: UIViewController
 
         var dateFirstBill:NSDate = NSDate()
         
-        for (index, value) in enumerate(maAllBillsForThisUser)
+        for (index, value) in maAllBillsForThisUser.enumerate()
         {
-            let mdOneBill:NSMutableDictionary = value as NSMutableDictionary
+            let mdOneBill:NSMutableDictionary = value as! NSMutableDictionary
             if index == 0
             {
-                dateFirstBill = mdOneBill.objectForKey("dateBillDate") as NSDate
+                dateFirstBill = mdOneBill.objectForKey("dateBillDate") as! NSDate
             }
             
-            var floatBillAmount:Float! = mdOneBill.objectForKey("stringBillAmount")?.floatValue!
+            let floatBillAmount:Float! = mdOneBill.objectForKey("stringBillAmount")?.floatValue!
             totalBill += floatBillAmount
             
-            var stringBillType:NSString = mdOneBill.objectForKey("stringBillType") as NSString
+            let stringBillType:NSString = mdOneBill.objectForKey("stringBillType") as! NSString
             if (stringBillType.isEqualToString("Gas"))
             {
                 totalGas += floatBillAmount
@@ -84,10 +84,10 @@ class StatisticsDetailsViewController: UIViewController
                 totalWater += floatBillAmount
                 waterCount++
             }
-            labelTotalAmountAllBills!.text = NSString(format: "£%.2f", totalBill)
-            labelTotalAmountElectricity!.text = NSString(format: "£%.2f", totalElec)
-            labelTotalAmountWater!.text = NSString(format: "£%.2f", totalWater)
-            labelTotalAmountGas!.text = NSString(format: "£%.2f", totalGas)
+            labelTotalAmountAllBills!.text = NSString(format: "£%.2f", totalBill) as String
+            labelTotalAmountElectricity!.text = NSString(format: "£%.2f", totalElec) as String
+            labelTotalAmountWater!.text = NSString(format: "£%.2f", totalWater) as String
+            labelTotalAmountGas!.text = NSString(format: "£%.2f", totalGas) as String
             
             var allAvg:Float = totalBill / Float(maAllBillsForThisUser.count)
             var gasAvg:Float = totalGas / Float(gasCount)
@@ -98,24 +98,24 @@ class StatisticsDetailsViewController: UIViewController
             if (elecAvg.isNaN == true) { elecAvg = 0.0 }
             if (waterAvg.isNaN == true) { waterAvg = 0.0 }
 
-            labelAverageAmountAllBills!.text = NSString(format: "£%.2f", allAvg)
-            labelAverageAmountElectricity!.text = NSString(format: "£%.2f", elecAvg)
-            labelAverageAmountWater!.text = NSString(format: "£%.2f", waterAvg)
-            labelAverageAmountGas!.text = NSString(format: "£%.2f", gasAvg)
+            labelAverageAmountAllBills!.text = NSString(format: "£%.2f", allAvg) as String
+            labelAverageAmountElectricity!.text = NSString(format: "£%.2f", elecAvg) as String
+            labelAverageAmountWater!.text = NSString(format: "£%.2f", waterAvg) as String
+            labelAverageAmountGas!.text = NSString(format: "£%.2f", gasAvg) as String
             
             let dateToday:NSDate = NSDate()
             var days:Int = self.daysBetweenDate(dateFirstBill, toDateTime:dateToday)
             days = abs(days);
 
-            var allDailyAvg:Float = totalBill / Float(days)
-            var gasDailyAvg:Float = totalGas / Float(days)
-            var elecDailyAvg:Float = totalElec / Float(days)
-            var waterDailyAvg:Float = totalWater / Float(days)
+            let allDailyAvg:Float = totalBill / Float(days)
+            let gasDailyAvg:Float = totalGas / Float(days)
+            let elecDailyAvg:Float = totalElec / Float(days)
+            let waterDailyAvg:Float = totalWater / Float(days)
 
-            labelDailyAverageAllBills!.text = NSString(format: "£%.2f", allDailyAvg)
-            labelDailyAverageElectricity!.text = NSString(format: "£%.2f", elecDailyAvg)
-            labelDailyAverageWater!.text = NSString(format: "£%.2f", waterDailyAvg)
-            labelDailyAverageGas!.text = NSString(format: "£%.2f", gasDailyAvg)
+            labelDailyAverageAllBills!.text = NSString(format: "£%.2f", allDailyAvg) as String
+            labelDailyAverageElectricity!.text = NSString(format: "£%.2f", elecDailyAvg) as String
+            labelDailyAverageWater!.text = NSString(format: "£%.2f", waterDailyAvg) as String
+            labelDailyAverageGas!.text = NSString(format: "£%.2f", gasDailyAvg) as String
         }
 
     }
@@ -123,13 +123,13 @@ class StatisticsDetailsViewController: UIViewController
     {
         for var ii=0; ii<maBills.count; ii++
         {
-            let mdOneBill1:NSMutableDictionary = maBills.objectAtIndex(ii) as NSMutableDictionary
-            let dateBillDate1:NSDate = mdOneBill1.objectForKey("dateBillDate") as NSDate
+            let mdOneBill1:NSMutableDictionary = maBills.objectAtIndex(ii) as! NSMutableDictionary
+            let dateBillDate1:NSDate = mdOneBill1.objectForKey("dateBillDate") as! NSDate
             
             for var jj=ii+1; jj<maBills.count; jj++
             {
-                let mdOneBill2:NSMutableDictionary = maBills.objectAtIndex(jj) as NSMutableDictionary
-                let dateBillDate2:NSDate = mdOneBill2.objectForKey("dateBillDate") as NSDate
+                let mdOneBill2:NSMutableDictionary = maBills.objectAtIndex(jj) as! NSMutableDictionary
+                let dateBillDate2:NSDate = mdOneBill2.objectForKey("dateBillDate") as! NSDate
                 
                 if (dateBillDate1.compare(dateBillDate2) == NSComparisonResult.OrderedDescending)
                 {
@@ -140,11 +140,8 @@ class StatisticsDetailsViewController: UIViewController
     }
     func daysBetweenDate(fromDateTime:NSDate, toDateTime:NSDate) -> Int
     {
-        var fromDate:NSDate
-        var toDate:NSDate
-        
-        var calendar:NSCalendar = NSCalendar.currentCalendar()
-        let components = calendar.components(NSCalendarUnit.DayCalendarUnit, fromDate: fromDateTime, toDate: toDateTime, options: nil)
+        let calendar:NSCalendar = NSCalendar.currentCalendar()
+        let components = calendar.components(NSCalendarUnit.Day, fromDate: fromDateTime, toDate: toDateTime, options: [])
         var days:Int = components.day
         days += 1 // include start day
         return days;

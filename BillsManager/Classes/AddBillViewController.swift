@@ -29,13 +29,13 @@ class AddBillViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName?.text = stringUserName
+        labelUserName?.text = stringUserName as String
     }
-    func textFieldDidBeginEditing(textField: UITextField!)
+    func textFieldDidBeginEditing(textField: UITextField)
     {
         textFieldAmount?.text = ""
         labelMessage?.text = ""
-        var tapGestureRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGestureSelector:")
+        let tapGestureRecognizer:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapGestureSelector:")
         self.view.addGestureRecognizer(tapGestureRecognizer)
     }
     func tapGestureSelector(tapGestureRecognizer: UITapGestureRecognizer!)-> Void
@@ -54,7 +54,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate
         
         if (stringUserName?.length > 0)
         {
-            var aFloat = stringUserName?.floatValue
+            let aFloat = stringUserName?.floatValue
             if (aFloat != 0.0)
             {
                 self.addBillToDB(aFloat!)
@@ -75,7 +75,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate
     {
         let dateBillDate:NSDate = datePickerBillDate!.date
         let index:Int? = self.segmentedControlBillType?.selectedSegmentIndex
-        var stringBillType:NSString? = segmentedControlBillType?.titleForSegmentAtIndex(index!)
+        let stringBillType:NSString? = segmentedControlBillType?.titleForSegmentAtIndex(index!)
         let stringBillAmount:NSString? = "\(floatAmount)"
         
         let mutableDictionaryBill:NSMutableDictionary = NSMutableDictionary()
@@ -85,7 +85,7 @@ class AddBillViewController: UIViewController, UITextFieldDelegate
         mutableDictionaryBill.setObject(stringBillType!, forKey:"stringBillType")
         mutableDictionaryBill.setObject(stringBillAmount!, forKey:"stringBillAmount")
         
-        var maBills:NSMutableArray = UtilityMethods.getBillsFromUserDefaults()
+        let maBills:NSMutableArray = UtilityMethods.getBillsFromUserDefaults()
         maBills.addObject(mutableDictionaryBill)
         UtilityMethods.setBillsToUserDefaults(maBills)
 

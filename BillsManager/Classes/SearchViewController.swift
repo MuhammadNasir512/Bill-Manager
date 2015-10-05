@@ -22,14 +22,14 @@ class SearchViewController: UIViewController, UsersTableViewControllerDelegate
     {
         if (segue.identifier == "SegueSearchVCToUsersTableVC")
         {
-            let userTableVC:UsersTableViewController = segue.destinationViewController as UsersTableViewController
+            let userTableVC:UsersTableViewController = segue.destinationViewController as! UsersTableViewController
             userTableVC.delegate = self
         }
     }
     func didSelectTableRowUsersTableVC(stringSelectedItem: NSString)
     {
         let storyboardMain:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let searchOptionsVC:SearchOptionsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDSearchOptionsVC") as SearchOptionsViewController
+        let searchOptionsVC:SearchOptionsViewController = storyboardMain.instantiateViewControllerWithIdentifier("StoryboardIDSearchOptionsVC") as! SearchOptionsViewController
         searchOptionsVC.stringUserName = stringSelectedItem
         self.navigationController?.pushViewController(searchOptionsVC, animated: true)
     }

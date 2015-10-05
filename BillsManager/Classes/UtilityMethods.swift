@@ -16,7 +16,7 @@ class UtilityMethods
         var mutableArrayUsers:NSMutableArray = NSMutableArray()
         if (userDefaults.objectForKey("MutableArrayUsersData") != nil)
         {
-            mutableArrayUsers = userDefaults.objectForKey("MutableArrayUsersData")?.mutableCopy() as NSMutableArray
+            mutableArrayUsers = userDefaults.objectForKey("MutableArrayUsersData")?.mutableCopy() as! NSMutableArray
         }
         return mutableArrayUsers;
     }
@@ -33,7 +33,7 @@ class UtilityMethods
         var mutableArrayUsers:NSMutableArray = NSMutableArray()
         if (userDefaults.objectForKey("MutableArrayBillsData") != nil)
         {
-            mutableArrayUsers = userDefaults.objectForKey("MutableArrayBillsData")?.mutableCopy() as NSMutableArray
+            mutableArrayUsers = userDefaults.objectForKey("MutableArrayBillsData")?.mutableCopy() as! NSMutableArray
         }
         return mutableArrayUsers;
     }
@@ -46,12 +46,12 @@ class UtilityMethods
     
     class func getBillsFromUserDefaults(stringUserName:NSString) -> NSMutableArray
     {
-        var maDataToReturn:NSMutableArray = NSMutableArray()
+        let maDataToReturn:NSMutableArray = NSMutableArray()
         let maAllUsers:NSMutableArray = UtilityMethods.getBillsFromUserDefaults()
-        for (index, value) in enumerate(maAllUsers)
+        for (_, value) in maAllUsers.enumerate()
         {
-            let mdOneBill:NSMutableDictionary = value as NSMutableDictionary
-            let stringUserNameFromDictionary:NSString = mdOneBill.objectForKey("stringUserName") as NSString
+            let mdOneBill:NSMutableDictionary = value as! NSMutableDictionary
+            let stringUserNameFromDictionary:NSString = mdOneBill.objectForKey("stringUserName") as! NSString
             if (stringUserNameFromDictionary == stringUserName)
             {
                 maDataToReturn.addObject(mdOneBill)

@@ -44,18 +44,18 @@ class UsersTableViewController: UIViewController, UITableViewDelegate
         var cell:UITableViewCell = UITableViewCell()
         if (tableView.dequeueReusableCellWithIdentifier("CellID") != nil)
         {
-            cell = tableView.dequeueReusableCellWithIdentifier("CellID") as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("CellID")!
         }
         else
         {
             cell = UITableViewCell(style:UITableViewCellStyle.Default, reuseIdentifier:"CellID")
         }
-        cell.textLabel?.text = mutableArrayUser.objectAtIndex(indexPath.row) as NSString
+        cell.textLabel?.text = mutableArrayUser.objectAtIndex(indexPath.row) as! NSString as String
         return cell
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        delegate?.didSelectTableRowUsersTableVC(mutableArrayUser.objectAtIndex(indexPath.row) as NSString)
+        delegate?.didSelectTableRowUsersTableVC(mutableArrayUser.objectAtIndex(indexPath.row) as! NSString)
     }
 }

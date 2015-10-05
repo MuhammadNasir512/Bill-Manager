@@ -20,8 +20,8 @@ class CustomCellSearchResults: UITableViewCell
     
     func setupCell()
     {
-        labelBillAmountValue?.text = stringBillAmount
-        labelBillTypeValue?.text = stringBillType
-        labelBillDateValue?.text = stringBillDate
+        labelBillAmountValue?.text = stringBillAmount as String
+        labelBillTypeValue?.text = stringBillType as String
+        labelBillDateValue?.text = stringBillDate as String
     }
 }

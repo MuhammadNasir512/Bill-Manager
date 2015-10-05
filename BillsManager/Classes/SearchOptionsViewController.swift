@@ -28,11 +28,11 @@ class SearchOptionsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName?.text = stringUserName
+        labelUserName?.text = stringUserName as String
     }
     
     // This method overridden to stop navigating to next view if input is invalid
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool
     {
         if (identifier == "SegueShowAll")
         {
@@ -52,9 +52,9 @@ class SearchOptionsViewController: UIViewController
         }
         if (stringMessage.length > 0)
         {
-            var alert = UIAlertController(
+            let alert = UIAlertController(
                 title: "Invalid Dates",
-                message: stringMessage,
+                message: stringMessage as String,
                 preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -68,7 +68,7 @@ class SearchOptionsViewController: UIViewController
     // This method overridden to set properties of next view controller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!)
     {
-        let searchResultsVC:SearchResultsViewController = segue.destinationViewController as SearchResultsViewController
+        let searchResultsVC:SearchResultsViewController = segue.destinationViewController as! SearchResultsViewController
         searchResultsVC.stringUserName = stringUserName
         
         if (segue.identifier == "SegueSearchWithDates")

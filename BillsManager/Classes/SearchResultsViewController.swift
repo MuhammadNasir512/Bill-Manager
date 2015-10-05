@@ -35,7 +35,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        labelUserName?.text = stringUserName
+        labelUserName?.text = stringUserName as String
         mutableArrayResults = UtilityMethods.getBillsFromUserDefaults(stringUserName)
         if (mutableArrayResults.count == 0)
         {
@@ -45,19 +45,19 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate
 
         if (stringSearchType == StringSearchTypeDatesResults)
         {
-            var maFilteredResults:NSMutableArray = self.filterSearchResults()
+            let maFilteredResults:NSMutableArray = self.filterSearchResults()
             mutableArrayResults.removeAllObjects()
-            mutableArrayResults.addObjectsFromArray(maFilteredResults)
+            mutableArrayResults.addObjectsFromArray(maFilteredResults as [AnyObject])
         }
         tableviewResults?.reloadData()
     }
     func filterSearchResults() -> NSMutableArray
     {
-        var maDataToReturn:NSMutableArray = NSMutableArray()
-        for (index, value) in enumerate(mutableArrayResults)
+        let maDataToReturn:NSMutableArray = NSMutableArray()
+        for (_, value) in mutableArrayResults.enumerate()
         {
-            let mdOneBill:NSMutableDictionary = value as NSMutableDictionary
-            let dateBillDate:NSDate = mdOneBill.objectForKey("dateBillDate") as NSDate
+            let mdOneBill:NSMutableDictionary = value as! NSMutableDictionary
+            let dateBillDate:NSDate = mdOneBill.objectForKey("dateBillDate") as! NSDate
             let dateOneDayBefore:NSDate = dateFromDate.dateByAddingTimeInterval(-24*60*60)
             let comparisonFromDate:NSComparisonResult = dateBillDate.compare(dateOneDayBefore)
             let comparisonToDate:NSComparisonResult = dateBillDate.compare(dateToDate)
@@ -79,7 +79,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate
             if (isFromComparisonValid == true && isToComparisonValid == true)
             {
                 maDataToReturn.addObject(mdOneBill)
-                println(mdOneBill)
+                print(mdOneBill)
             }
 
         }
@@ -95,20 +95,20 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate
         var cell:CustomCellSearchResults = CustomCellSearchResults()
         if (tableView.dequeueReusableCellWithIdentifier("CellID") != nil)
         {
-            cell = tableView.dequeueReusableCellWithIdentifier("CellID") as CustomCellSearchResults
+            cell = tableView.dequeueReusableCellWithIdentifier("CellID") as! CustomCellSearchResults
         }
         else
         {
             cell = CustomCellSearchResults(style:UITableViewCellStyle.Default, reuseIdentifier:"CellID")
         }
-        let mdOneItem:NSMutableDictionary = mutableArrayResults.objectAtIndex(indexPath.row) as NSMutableDictionary
-        let dateBillDate:NSDate = mdOneItem.objectForKey("dateBillDate") as NSDate
+        let mdOneItem:NSMutableDictionary = mutableArrayResults.objectAtIndex(indexPath.row) as! NSMutableDictionary
+        let dateBillDate:NSDate = mdOneItem.objectForKey("dateBillDate") as! NSDate
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MMM-yyyy"
         let stringDate:NSString = dateFormatter.stringFromDate(dateBillDate)
-        var stringAmount:NSString = mdOneItem.objectForKey("stringBillAmount") as NSString
-        stringAmount = "£" + stringAmount
-        let stringBillType:NSString = mdOneItem.objectForKey("stringBillType") as NSString
+        var stringAmount:NSString = mdOneItem.objectForKey("stringBillAmount") as! NSString
+        stringAmount = "£" + (stringAmount as String)
+        let stringBillType:NSString = mdOneItem.objectForKey("stringBillType") as! NSString
 
         cell.stringBillAmount = stringAmount
         cell.stringBillType = stringBillType
